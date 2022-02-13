@@ -1,5 +1,8 @@
 # 電力計測プロジェクト
 
+2022/1/28
+----------
+
 ## ブログ
 
 - [スマートメーターって何？](https://route-b.iij.ad.jp/archives/34)
@@ -17,6 +20,10 @@
 - [計測データの情報発信（電力メーター情報発信サービス）](https://powergrid.chuden.co.jp/goannai/ippan/smartmeter/use/)
 
 - [スマートメーター導入のチラシ](https://www.chuden.co.jp/resource/seicho_kaihatsu/kaihatsu/techno/techno_naiyou2016/techno_naiyou2016_53.pdf)
+
+
+〜2022/2/13
+----------
 
 ## 自力で Nature Remo E の API を叩いてみる
 
