@@ -50,5 +50,5 @@ name をプロジェクトの名前に
 テンプレートへの機能追加の方法
 ----------------------------
 
-(https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples)
+[https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples]
 これらのプログラムを参考にしてペリフェラル(I2C, UART, SPIなど)を使用するプログラムを作成する。
