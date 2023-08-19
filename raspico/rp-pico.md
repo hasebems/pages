@@ -7,5 +7,7 @@
 一般資料
 ---------
 
+![Pin配置](pico-pinout.svg)
+
 - [Raspberry Pi pico公式資料](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)
 

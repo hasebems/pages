@@ -1,5 +1,7 @@
 # Rust開発環境構築 & 開発方法
 
+[前に戻る](rp-pico.md)
+
 Raspberry Pi pico向けPage
 ------------------------------
 
@@ -8,6 +10,7 @@ Raspberry Pi pico向けPage
     - rp2040-hal : [https://docs.rs/rp2040-hal/latest/rp2040_hal/ : RP2040マイコンの基本的機能](https://docs.rs/rp2040-hal/latest/rp2040_hal/)
     - rp-pico : [https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico : マイコンにボード(Raspberry Pi pico)の情報を載せたもの？](https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico)
         - rp2040-hal を含んでいる
+        - GPIO の定義が書かれた lib.rs がソースに追加されている
 
 
 picoの環境構築
