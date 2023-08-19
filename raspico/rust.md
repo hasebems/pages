@@ -3,11 +3,11 @@
 Raspberry Pi pico向けPage
 ------------------------------
 
-- [raspi pico 向け crate](https://docs.rs/crate/rp-pico/latest)
-- [上記の github](https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico)
+- [raspi pico 向け crate のRustドキュメント](https://docs.rs/crate/rp-pico/latest)
 - Crateの包含関係の考え方
-    - [rp2040-hal : RP2040マイコンの基本的機能](https://docs.rs/rp2040-hal/latest/rp2040_hal/)
-    - rp-pico : マイコンにボード(Raspberry Pi pico)の情報を載せたもの？
+    - rp2040-hal : [https://docs.rs/rp2040-hal/latest/rp2040_hal/ : RP2040マイコンの基本的機能](https://docs.rs/rp2040-hal/latest/rp2040_hal/)
+    - rp-pico : [https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico : マイコンにボード(Raspberry Pi pico)の情報を載せたもの？](https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico)
+        - rp2040-hal を含んでいる
 
 
 picoの環境構築
@@ -30,25 +30,25 @@ Templeteから環境構築
 
 1. pico開発用Templeteがあるので、そこから新規作成  [https://github.com/rp-rs/rp2040-project-template](https://github.com/rp-rs/rp2040-project-template)
 上記を利用して
-> cargo generate \
+    > cargo generate \
     --git https://github.com/rp-rs/rp2040-project-template \
     --branch main \
     --name xxxxxxxx
 
-で、環境が一発で作成できる（名前に _ を使うと怒られて、 - に変えられる）
+    で、環境が一発で作成できる（名前に _ を使うと怒られて、 - に変えられる）
 
-2. Cargo.toml を修正
+1. Cargo.toml を修正
 name をプロジェクトの名前に
 
 1. .cargo/config.toml のコメント修正(cargo.tomlじゃないよ！)
     - 実行バイナリを転送するrunner修正
->runner = "probe-run --chip RP2040"
->runner = "elf2uf2-rs -d"
->runner = "probe-rs run --chip RP2040 --protocol swd"
+    >runner = "probe-run --chip RP2040"
+    >runner = "elf2uf2-rs -d"
+    >runner = "probe-rs run --chip RP2040 --protocol swd"
 
 
 テンプレートへの機能追加の方法
 ----------------------------
 
-[https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples](https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples)
-これらのプログラムを参考にしてペリフェラル(I2C, UART, SPIなど)を使用するプログラムを作成する。
+- [https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples](https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples)
+    これらのプログラムを参考にしてペリフェラル(I2C, UART, SPIなど)を使用するプログラムを作成する。
