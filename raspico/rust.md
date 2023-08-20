@@ -11,6 +11,8 @@ Raspberry Pi pico向けPage
     - rp-pico : [https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico : マイコンにボード(Raspberry Pi pico)の情報を載せたもの？](https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico)
         - rp2040-hal を含んでいる
         - GPIO の定義が書かれた lib.rs がソースに追加されている
+    - 上記とは全然別に、組み込み用USBのCrateが存在する (usb-device)
+    - さらに上記の USB Crate とは別に、USB MIDI 用のCrateが存在する (usbd-midi)
 
 
 picoの環境構築
@@ -18,9 +20,10 @@ picoの環境構築
 
 [Qiita記事より](https://qiita.com/ochaochaocha3/items/1969d76debd6d3b42269)
 
-- >rustup target install thumbv6m-none-eabi
-    - Cortex-M0のtoolchainをインストール
-- >cargo install flip-link elf2uf2-rs
+- Cortex-M0のtoolchainをインストール
+    >rustup target install thumbv6m-none-eabi
+- 関連ツールのインストール
+    >cargo install flip-link elf2uf2-rs
     - flip-linkは、組込みプログラム実行時のスタックオーバーフローを防止するため、リンク時にメモリ配置を変更するツール
     - elf2uf2-rsは、ビルドしたプログラムをUF2というPicoに書き込める形式に変換するツール
 
