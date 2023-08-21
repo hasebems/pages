@@ -7,7 +7,10 @@ Raspberry Pi pico向けPage
 
 - [raspi pico 向け crate のRustドキュメント](https://docs.rs/crate/rp-pico/latest)
 - Crateの包含関係の考え方
-    - rp2040-hal : [https://docs.rs/rp2040-hal/latest/rp2040_hal/ : RP2040マイコンの基本的機能](https://docs.rs/rp2040-hal/latest/rp2040_hal/)
+    - embedded-hal : [https://crates.io/crates/embedded-hal](https://crates.io/crates/embedded-hal)
+        - Embedded Devices Working Group が開発している組み込み向け HAL (Traitを集めたCrate)
+    - rp2040-hal : [https://docs.rs/rp2040-hal/latest/rp2040_hal/](https://docs.rs/rp2040-hal/latest/rp2040_hal/)
+        - 上記 embedded-hal の RP2040マイコン向け実装
     - rp-pico : [https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico : マイコンにボード(Raspberry Pi pico)の情報を載せたもの？](https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico)
         - rp2040-hal を含んでいる
         - GPIO の定義が書かれた lib.rs がソースに追加されている
