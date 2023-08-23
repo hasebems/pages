@@ -2,6 +2,15 @@
 
 [前に戻る](rp-pico.md)
 
+用語解説(Terminology)
+-----------------------
+
+- PAC : Peripheral Access Crates
+- HAL : Hardware Abstruct Layer
+- BSP : Board Support Packages
+- 下に行くほど抽象度が高く、ハードが違っても同じコードが使いまわせる
+
+
 Raspberry Pi pico向けPage
 ------------------------------
 
@@ -38,11 +47,11 @@ Templeteから環境構築
 以下では、デバッグ用Probeは用いず、直接実行ファイルを書き込む方法を説明する。
 
 1. pico開発用Templeteがあるので、そこから新規作成  [https://github.com/rp-rs/rp2040-project-template](https://github.com/rp-rs/rp2040-project-template)
-上記を利用して
+上記を利用して、開発フォルダを作りたい場所で以下をタイプ（バックスラッシュの後 return して改行）
     > cargo generate \
-    --git https://github.com/rp-rs/rp2040-project-template \
-    --branch main \
-    --name xxxxxxxx
+       --git https://github.com/rp-rs/rp2040-project-template \
+       --branch main \
+       --name xxxxxxxx
 
     で、環境が一発で作成できる（名前に _ を使うと怒られて、 - に変えられる）
 
@@ -51,9 +60,9 @@ name をプロジェクトの名前に
 
 1. .cargo/config.toml のコメント修正(cargo.tomlじゃないよ！)
     - 実行バイナリを転送するrunner修正
-    >runner = "probe-run --chip RP2040"
-    >runner = "elf2uf2-rs -d"
-    >runner = "probe-rs run --chip RP2040 --protocol swd"
+    > #runner = "probe-run --chip RP2040"
+    > runner = "elf2uf2-rs -d"
+    > #runner = "probe-rs run --chip RP2040 --protocol swd"
 
 
 テンプレートへの機能追加の方法
