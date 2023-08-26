@@ -5,15 +5,21 @@
 用語解説(Terminology)
 -----------------------
 
+- BSP : Board Support Packages
 - PAC : Peripheral Access Crates
 - HAL : Hardware Abstruct Layer
-- BSP : Board Support Packages
-- 下に行くほど抽象度が高く、ハードが違っても同じコードが使いまわせる
 
 
 Raspberry Pi pico向けPage
 ------------------------------
 
+- 全体イメージ
+    - BSP, PAC, HAL の関係性
+        - 右に行くほど抽象度が高く、ハードが違っても同じコードが使いまわせる
+        - HAL を具体的なチップの仕様に落としたのが、PAC
+        - PAC を具体的なボードの仕様に落としたのが、BSP?
+        - そもそも HAL はハードの違いを吸収するためのものなので、ハードのアクセスは PAC ではなく、HAL を使わなければならない
+    - Cargo.toml には、BSP を書けば良い。(rp-pico)
 - [raspi pico 向け crate のRustドキュメント](https://docs.rs/crate/rp-pico/latest)
 - Crateの包含関係の考え方
     - embedded-hal : [https://crates.io/crates/embedded-hal](https://crates.io/crates/embedded-hal)
