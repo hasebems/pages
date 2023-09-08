@@ -15,11 +15,13 @@ Raspberry Pi pico向けPage
 
 - 全体イメージ
     - BSP, PAC, HAL の関係性
-        - 右に行くほど抽象度が高く、ハードが違っても同じコードが使いまわせる
+        - use 宣言の際、bsp::hal::pac の順にシンボルが繋がっている
         - HAL を具体的なチップの仕様に落としたのが、PAC
-        - PAC を具体的なボードの仕様に落としたのが、BSP?
-        - そもそも HAL はハードの違いを吸収するためのものなので、ハードのアクセスは PAC ではなく、HAL を使わなければならない
+        - HAL の上に、ボードの仕様をかぶせたのが、BSP
+        - そもそも HAL はハードの違いを吸収するためのものなので、ハードへのアクセスは PAC のシンボルを直接使うのではなく、できるだけ HAL の提供するAPIを使わなければならない
     - Cargo.toml には、BSP を書けば良い。(rp-pico)
+        - BSP が rp2040-hal(PAC) を包含する。
+        - 実際には、BSP(rp-pico)自体には、全ピンの定義しか入っておらず、別途 PAC を付属している。
 - [raspi pico 向け crate のRustドキュメント](https://docs.rs/crate/rp-pico/latest)
 - Crateの包含関係の考え方
     - embedded-hal : [https://crates.io/crates/embedded-hal](https://crates.io/crates/embedded-hal)
@@ -76,3 +78,13 @@ name をプロジェクトの名前に
 
 - [https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples](https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples)
     これらのプログラムを参考にしてペリフェラル(I2C, UART, SPIなど)を使用するプログラムを作成する。
+
+ペリフェラルの追加諸問題
+------------------------
+
+- main() 以外に持っていけない問題
+- 割り込みなど別タスクで扱う問題
+- I2Cを追加した時の問題
+
+
+
