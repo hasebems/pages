@@ -9,5 +9,8 @@
 - 実は公式から出ているArduino環境のドキュメント
     - [https://arduino-pico.readthedocs.io/en/latest/index.html](https://arduino-pico.readthedocs.io/en/latest/index.html)
 
+- LCD ACM1602NI-FLW-FBW-M01 の使い方
+    - []
+
 - 参考記事
     - [Raspberry Pi Pico をArduinoでプログラミング！](https://karakuri-musha.com/inside-technology/arduino-raspberrypi-pico-helloworld01/) : Web記事

@@ -2,7 +2,8 @@
 
 - [Rust開発環境構築 & 開発方法](rust.md)
 - [USB MIDI開発資料(Rust化)](usbmidi.md)
-- [Arduino開発環境](arduino.md)
+- [Arduino開発環境(C++)](arduino.md)
+- [LCD ACM1602と接続する](lcd_acm1602.md)
 - [PWM](pwm.md)
 
 一般資料
