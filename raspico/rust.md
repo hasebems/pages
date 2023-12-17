@@ -79,12 +79,5 @@ name をプロジェクトの名前に
 - [https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples](https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal/examples)
     これらのプログラムを参考にしてペリフェラル(I2C, UART, SPIなど)を使用するプログラムを作成する。
 
-ペリフェラルの追加諸問題
-------------------------
-
-- main() 以外に持っていけない問題
-- 割り込みなど別タスクで扱う問題
-- I2Cを追加した時の問題
-
 
 
