@@ -1,4 +1,4 @@
-# Rust Pheripheral開発環境
+# Rust Peripheral開発環境
 
 [前に戻る](rp-pico.md)
 
