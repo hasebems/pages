@@ -2,38 +2,6 @@
 
 [前に戻る](rp-pico.md)
 
-用語解説(Terminology)
------------------------
-
-- BSP : Board Support Packages
-- PAC : Peripheral Access Crates
-- HAL : Hardware Abstruct Layer
-
-
-Raspberry Pi pico向けPage
-------------------------------
-
-- 全体イメージ
-    - BSP, PAC, HAL の関係性
-        - use 宣言の際、bsp::hal::pac の順にシンボルが繋がっている
-        - HAL を具体的なチップの仕様に落としたのが、PAC
-        - HAL の上に、ボードの仕様をかぶせたのが、BSP
-        - そもそも HAL はハードの違いを吸収するためのものなので、ハードへのアクセスは PAC のシンボルを直接使うのではなく、できるだけ HAL の提供するAPIを使わなければならない
-    - Cargo.toml には、BSP を書けば良い。(rp-pico)
-        - BSP が rp2040-hal(PAC) を包含する。
-        - 実際には、BSP(rp-pico)自体には、全ピンの定義しか入っておらず、別途 PAC を付属している。
-- [raspi pico 向け crate のRustドキュメント](https://docs.rs/crate/rp-pico/latest)
-- Crateの包含関係の考え方
-    - embedded-hal : [https://crates.io/crates/embedded-hal](https://crates.io/crates/embedded-hal)
-        - Embedded Devices Working Group が開発している組み込み向け HAL (Traitを集めたCrate)
-    - rp2040-hal : [https://docs.rs/rp2040-hal/latest/rp2040_hal/](https://docs.rs/rp2040-hal/latest/rp2040_hal/)
-        - 上記 embedded-hal の RP2040マイコン向け実装
-    - rp-pico : [https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico : マイコンにボード(Raspberry Pi pico)の情報を載せたもの？](https://github.com/rp-rs/rp-hal-boards/tree/main/boards/rp-pico)
-        - rp2040-hal を含んでいる
-        - GPIO の定義が書かれた lib.rs がソースに追加されている
-    - 上記とは全然別に、組み込み用USBのCrateが存在する (usb-device)
-    - さらに上記の USB Crate とは別に、USB MIDI 用のCrateが存在する (usbd-midi)
-
 
 picoの環境構築
 --------------
@@ -91,4 +59,3 @@ name をプロジェクトの名前に
     - cargo run をもう一度行ってみる
     - ときどき、書き込み中にエラーが起こり、ドライブが見えるようになる。なぜかプログラムも書かれている。
     - 今のところ、ドライブが消えない場合のリカバリ方は上記のやり方でしかうまくいっていない
-
