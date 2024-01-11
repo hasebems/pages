@@ -32,7 +32,7 @@ Peripheral アクセス方法の整理
         - GPIO の定義が書かれた lib.rs がソースに追加されている
     - 上記とは全然別に、組み込み用USBのCrateが存在する (usb-device)
     - さらに上記の USB Crate とは別に、USB MIDI 用のCrateが存在する (usbd-midi)
-    - [https://qiita.com/iwatake2222/items/6bec963a145a15019ca5](https://qiita.com/iwatake2222/items/6bec963a145a15019ca5)
+    - BSP, PAC, HAL の関係性に関する記事: [https://qiita.com/iwatake2222/items/6bec963a145a15019ca5](https://qiita.com/iwatake2222/items/6bec963a145a15019ca5)
 
 
 具体的な実装の問題点
@@ -41,7 +41,6 @@ Peripheral アクセス方法の整理
 - 現状の問題意識
     - main()関数内で宣言されたペリフェラルの変数を、main()関数以外に持ち運ぶことができない。
     - 引数に入れると、copy Traitがないのなんのと言われる
-    - 変数の型に <type> が指定され、何重にもネストされおり、取り扱いが難しい
 
 - 現状の対応
     1. ペリフェラルを変数に出来る型で、グローバル変数化する。
@@ -53,10 +52,23 @@ Peripheral アクセス方法の整理
         - 関数内は unsafe 内に if let Some(x) = &mut ペリフェラル名 {} と書き、xでアクセス
     1. 上記の関数を任意の箇所からコールして使う
 
-- 型指定にある <>
-    - これは struct の型に対するジェネリクスと考えられる
+### ペリフェラル内のGenerics
+
+```rust:i2c.rs
+pub struct I2C<I2C, Pins, Mode = Controller> {
+        i2c: I2C,
+        pins: Pins,
+        mode: PhantomData<Mode>,
+}
+```
+
+- 上記の定義では、最初のI2Cが型であり、<>内にあるI2Cは、Genericsとして示す文字列
+- 型指定にあるGenerics
     - 例えば: static mut USB_DEVICE: Option<UsbDevice<hal::usb::UsbBus>> = None;
         - Option は None があるから
         - UsbDevice<hal::usb::UsbBus> は ??
             - インスタンス生成なので、UsbDevice の型宣言の中にある型引数に、UsbBus が入れられたと考えられる
-    - A<B<C>> はどう解釈する？
+    - "A＜B＞" : AはGenericsを伴う型であり、中に特定の型Bを入れないと成り立たない。
+        - BにさらにGenericsがあった場合、上記と同じ考えを繰り返す
+        - 型定義でGenericsを使う場合、Trait で指示するが、Genericsで実インスタンスを作るときは、型名を指定しなければならない
+
