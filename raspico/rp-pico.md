@@ -5,6 +5,7 @@
 - [USB MIDI開発資料(Rust化)](usbmidi.md)
 - [Arduino開発環境(C++)](arduino.md)
 - [PWM](pwm.md)
+- [Pico用部品](parts.md)
 
 一般資料
 ---------
