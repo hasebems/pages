@@ -18,3 +18,11 @@
 * Macとラズパイを直接、有線LANケーブルで繋ぐのは一般的な接続方法ではなく、ネットワーク設定が面倒
     - 通常はハブやルーターから接続されている
 * Macのインターネット共有をONにしたが、ラズパイがネットに繋がらなかった。
+
+## Raspberry Pi 5
+
+- Getting Started
+    - [公式サイト](https://www.raspberrypi.com/documentation/computers/getting-started.html)
+- Audio
+    - [Board](https://docs.rs-online.com/1796/A700000006917300.pdf)
+    - [I2S設定](http://marchan.e5.valueserver.jp/cabin/comp/jbox/arc300/doc3008.html)
