@@ -23,6 +23,11 @@
 
 - Getting Started
     - [公式サイト](https://www.raspberrypi.com/documentation/computers/getting-started.html)
+    - [シリアル有効化](https://qiita.com/s_fujii/items/466d455ca19fb4c20744)
 - Audio
     - [Board](https://docs.rs-online.com/1796/A700000006917300.pdf)
+    - [Board公式サイト](http://www.inno-maker.com/hifi-dac-hat-for-raspberry-pi/)
     - [I2S設定](http://marchan.e5.valueserver.jp/cabin/comp/jbox/arc300/doc3008.html)
+- Pianoteq
+    - [掲示板でラズパイインストール話](https://forum.modartt.com/viewtopic.php?id=8268)
+    - [ptq8&rpi5対応](https://github.com/Hillcow/pianoteq-pi/tree/main)
