@@ -23,10 +23,12 @@
 
 - Arduino で Timer を使う
     - Arduino-Picoで動作する以下を使用する(今までのMsTimer2の代わり)
-    - https://github.com/khoih-prog/RPI_PICO_TimerInterrupt
-    - https://www.arduino.cc/reference/en/libraries/rpi_pico_timerinterrupt/
+    - [https://github.com/khoih-prog/RPI_PICO_TimerInterrupt](https://github.com/khoih-prog/RPI_PICO_TimerInterrupt)
+    - [https://www.arduino.cc/reference/en/libraries/rpi_pico_timerinterrupt/](https://www.arduino.cc/reference/en/libraries/rpi_pico_timerinterrupt/)
 
-
+- GPIO を高速に叩く
+    - Arduino の digitalWrite() は使わず、gpio_put() を使う
+      [https://www.raspberrypi.com/documentation/pico-sdk/gpio_8h.html](https://www.raspberrypi.com/documentation/pico-sdk/gpio_8h.html)
 
 
 - LCD ACM1602NI-FLW-FBW-M01 の使い方

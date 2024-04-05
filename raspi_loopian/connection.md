@@ -28,6 +28,9 @@
     - [Board](https://docs.rs-online.com/1796/A700000006917300.pdf)
     - [Board公式サイト](http://www.inno-maker.com/hifi-dac-hat-for-raspberry-pi/)
     - [I2S設定](http://marchan.e5.valueserver.jp/cabin/comp/jbox/arc300/doc3008.html)
+    - sudo nano /boot/firmware/config.txt
+        - dtparam=i2s=on の # を取って enable に
+        - dtoverlay=allo-boss-dac-pcm512x-audio を追記
 - Pianoteq
     - [掲示板でラズパイインストール話](https://forum.modartt.com/viewtopic.php?id=8268)
     - [ptq8&rpi5対応](https://github.com/Hillcow/pianoteq-pi/tree/main)
