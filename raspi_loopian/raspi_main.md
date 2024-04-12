@@ -6,3 +6,4 @@
 ## Raspberry Pi 5 の上で Loopian を動かす
 - [Raspberry Pi 5の設定](setup.md)
 - [Pianoteq のインストール](pianoteq.md)
+- [ラズパイで Loopian_Rust を動かそうとした話](rust_setup.md)
