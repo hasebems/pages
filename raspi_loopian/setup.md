@@ -28,5 +28,14 @@
         Instead on Pi5 with bookworm this configuration seems to enable all this on new UART connector. A different setup is needed to replicate backward compatible behaviour which setup seems to be: specify `console=ttyAMA0,115200` in cmdline.txt when `dtparam=uart0=on` is asserted in config.txt. All good, but confusing as now `/dev/serial0 -> ttyAMA10` where (I'm guessing ttyAMA10 is the new port) and /dev/serial1 is not assigned at all? If we also assert `dtoverlay=disable-bt` in config.txt we get aliases `/dev/serial0 -> ttyAMA10` and `/dev/serial1 -> ttyS0`.
         - serial0 is meant to be an alias for the "main" UART. On all Pis before Pi 5 this is obviously the UART enabled on GPIOs 14 & 15 (pins 8 & 10). This is the UART that a serial console would be enabled on (if wanted) by the `console=serial0,115200` in cmdline.txt. Pi 5 changes this by making the UART on the 3-pin debug header the default for serial0 - /dev/ttyAMA10. You can override this behaviour with `dtparam=uart0_console`, which enables UART0 and makes serial0 an alias for it.
         - serial1 is an alias for the UART used for Bluetooth, which is not accessible on the 40-pin header. However, on Bookworm (more accurately, since the newer 6.1 kernels) the kernel configures the UART for Bluetooth in a way that it has no `/dev/tty...` entry. As a result there is no `/dev/serial1. N.B`. It is still possible to revert to the old behaviour using `dtparam=krnbt=off`, but this isn't guaranteed to work forever.
-    - 上のように `dtoverlay=disable-bt` を設定
     - [掲示板でRpi5×UART×MIDIの話](https://forums.raspberrypi.com/viewtopic.php?t=365126)
+    - [公式のマニュアル](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-uarts)
+    - で、結局どうなったかというと、
+        - sudo raspi-config で、Interface Options -> Serial Port -> No -> Yes
+        - /boot/firmware/config.txt に以下を書く
+            enable_uart=1  
+            init_uart_baud=38400  
+            dtoverlay=midi-uart0-pi5  
+            dtoverlay=disable-bt  
+            dtparam=uart0=on  
+        - この状態で、serial0, serial1 両方とも使えず、プログラムからは `/dev/ttyAMA0` でアクセスする
