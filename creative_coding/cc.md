@@ -7,3 +7,4 @@
 - [みんなの作品](https://photos.google.com/share/AF1QipN6dtCPjp2YoP_T9_ugICKaw3kDybmC9U0VG6uydmfVy9CF-gf311Uyw9n4OzWlpQ?key=V0JXVnVHQUxkWldoOFR3RDhtdjI1OHljLVJ4Vkhn)
 - [私のメモ](homo_codens.md)
 - 期間中は Discord のサーバーにて連絡
+- [鈴木さん](https://kamoeartcenter.org/events/uekibachidesign/)
