@@ -15,7 +15,7 @@ AIとの関連性
 高尾さんと相談
 Generative Art
 
-高尾
+### 高尾
 2008 OpenFrameworksとの出会い
 母のキルト
 JGAF
@@ -87,7 +87,7 @@ Affordance of creative coding
 ## day2
 
 adobe color
-https://color.adobe.com/ja/create/image
+[https://color.adobe.com/ja/create/image]
 色のパレットを作るツール
 
 random()
@@ -103,7 +103,7 @@ uncreative coding -> AI を使ったコーディング
 「わたしは不思議の輪」
 
 colormind
-http://colormind.io/
+[http://colormind.io/]
 
 ### 木原
 生成AIを使った表現が抱えている課題
@@ -147,7 +147,8 @@ http://colormind.io/
 ものを感じてしまう。
 確かに、普通の人にはそこまでの仕込みが出来ない。それがプロたる所以？
 
-やるべきこと：・もっと時間あたりの変化をつけること
+やるべきこと：
+- もっと時間あたりの変化をつけること
 - 全部書くことにこだわらない（分かってもらうことにそれほど意味はない）
 - 画像エフェクトは、ある程度変える
 - ただし、書いていることは強調したい
