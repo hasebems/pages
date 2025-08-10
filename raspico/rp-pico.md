@@ -12,6 +12,7 @@
 - [PWM](pwm.md)
 - [ArduinoでPicoのPIO機能を使う](pio.md)
 - [ArduinoでMultiCore通信](multi.md)
+- [Digital Clockを作る(2025/8)](clock.md)
 
 一般資料
 ---------
