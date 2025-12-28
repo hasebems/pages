@@ -10,10 +10,12 @@ picoの環境構築
 
 - Cortex-M0のtoolchainをインストール
     >rustup target install thumbv6m-none-eabi
-- 関連ツールのインストール
+- 関連ツールのcargoへのバイナリクレートのインストール
     >cargo install cargo-generate flip-link elf2uf2-rs
     - flip-linkは、組込みプログラム実行時のスタックオーバーフローを防止するため、リンク時にメモリ配置を変更するツール
     - elf2uf2-rsは、ビルドしたプログラムをUF2というPicoに書き込める形式に変換するツール
+    >cargo install --list
+    - インストールしたバイナリクレートを一覧する
 - 以下のコマンドで picotool をインストールする
     > brew install picotool
 
